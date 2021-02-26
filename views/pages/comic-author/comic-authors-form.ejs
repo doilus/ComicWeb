@@ -1,0 +1,101 @@
+﻿<%- include('../../fragments/header.ejs') %>
+<script type="application/javascript" src="/js/validationCommon.js"></script>
+<script type="application/javascript" src="/js/validationComicAuthorsform.js"></script>
+    <main>
+            <h2><%= pageTitle %></h2>
+        <form class="form" method="post" action="<%=formAction%>" novalidate onsubmit="return validateForm()">
+            
+            <input type="hidden" name="_id" value="<%= autcom._id %>">
+            
+            <label for="comics"><%= __('comic-author.fields.comics') %><abbr title="required" aria-label="required">*</abbr></label>
+
+             <select id="comics_id" name="comics_id" class="<%= validationErrors.find(e => e.path.includes('comics_id')) ? 'error-input' : '' %>"   <%= (formMode == 'showDetails') ? 'disabled' : '' %> >
+                <option value="" selected >  <%= ( formMode == 'showDetails' ) ? autcom.comics.title : "---" + __('comic-author.form.chosecom') +  "---" %> </option>
+                 <% for (let i=0; i<allComics.length; i++) { let comics = allComics[i]; %>
+                    <option value="<%= comics._id %>" label="<%= comics.title  %>"
+                    <%= (comics._id == autcom.comics_id) ? 'selected' : ''%>></option>
+                 <% } %>
+                
+            </select>
+           
+            <span id="errorComics" class="errors-text">
+                 <% if (validationErrors.find(e => e.path.includes('comics_id'))) { %>
+                    <!-- <%= validationErrors.find(e => e.path.includes('comics_id')).message %> -->
+                 <% } %>
+            </span>
+
+            <label for="author"><%= __('comic-author.fields.author') %><abbr title="required" aria-label="required">*</abbr></label>
+
+             <select id="author_id" name="author_id" class="<%= validationErrors.find(e => e.path.includes('author_id')) ? 'error-input' : '' %>"  <%= (formMode == 'showDetails') ? 'disabled' : '' %> >
+                <option value="" selected><%= ( formMode == 'showDetails') ? autcom.author.firstName + " " + autcom.author.surname : "---" + __('comic-author.form.choseaut') + "---" %></option>
+                 <% for (let i=0; i<allAuthor.length; i++) { let author = allAuthor[i]; %>
+                <option value="<%= author._id %>" label="<%= author.firstName + ' ' + author.surname %>"
+                <%= (autcom._id && author._id.toString() == autcom.author_id.toString()) ? 'selected' : ''%>></option>
+                 <% } %>
+            </select>
+           
+            <span id="errorAuthor" class="errors-text">
+                 <% if (validationErrors.find(e => e.path.includes('author_id'))) { %>
+                   <!-- <%= validationErrors.find(e => e.path.includes('author_id')).message %> -->
+                   <%= __('validationMessage.fieldRequired') %>
+                 <% } %>
+            </span>
+
+
+            <label for="role"><%= __('comic-author.fields.role') %><abbr title="required" aria-label="required">*</abbr></label>
+            <input type="text" name="role" id="role" placeholder="<%= __('placeholder.string6') %>" class="<%= validationErrors.find(e => e.path.includes('role')) ? 'error-input' : '' %>" value="<%= autcom.role %>" <%= (formMode == 'showDetails') ? 'disabled' : '' %>/>
+            <span id="errorRole" class="errors-text">
+                 <% if (validationErrors.find(e => e.path.includes('role'))) { %>
+                  <%= __('validationMessage.fieldRequired') %>
+                 <% } %>
+            </span>
+
+            <label for="country"><%= __('comic-author.fields.country') %></label>
+            <input type="text" name="country" id="country" placeholder="<%= __('placeholder.string') %>" class="<%= validationErrors.find(e => e.path.includes('country')) ? 'error-input' : '' %>" value="<%= autcom.country %>" <%= (formMode == 'showDetails') ? 'disabled' : '' %>  />
+            <span id="errorCountry" class="errors-text">
+                 <% if (validationErrors.find(e => e.path.includes('country'))) { %>
+                  <%= __('validationMessage.fieldRequired') %>
+                 <% } %>
+            </span>
+
+            <label for="percent"><%= __('comic-author.fields.percent') %><abbr title="required" aria-label="required">*</abbr></label>
+            <input type="number" name="percent" id="percent" placeholder="0-100" class="<%= validationErrors.find(e => e.path.includes('percent')) ? 'error-input' : '' %>" value="<%= autcom.percent %>" <%= (formMode == 'showDetails') ? 'disabled' : '' %>/>
+            <span id="errorPercent" class="errors-text">
+                 <% if (validationErrors.find(e => e.path.includes('percent'))) { %>
+                  <%= __('validationMessage.fieldRequired') %>
+                 <% } %>
+            </span>
+
+            <div style="display: none">
+               <span id="errorMessage-required"><%= __('validationMessage.fieldRequired') %></span>
+               <span id="errorMessage-signs6"><%= __('validationMessage.signs6') %></span>
+               <span id="errorMessage-signs"><%= __('validationMessage.signs6') %></span>
+               <span id="errorMessage-intcheck"><%= __('validationMessage.intcheck') %></span>
+               <span id="errorMessage-intcheckBig"><%= __('validationMessage.intcheckBig') %></span>
+               <span id="errorMessage-comic"><%= __('validationMessage.comic') %></span>
+               <span id="errorMessage-author"><%= __('validationMessage.author') %></span>
+               <span id="errorMessage-summary"><%= __('validationMessage.summary') %></span>
+           </div>
+
+            <% if (formMode == 'showDetails') { %>
+                <div class="form-buttons">
+                  <% if(loggedUser) { %>
+                 <a href="/comic-author/edit/<%= autcom._id %>" class="form-button-submit" ><%= __('list.actions.edit') %></a> 
+                </div>
+                <% } %>
+            <% } %>
+
+            <div class="form-buttons">
+                <% if (formMode != 'showDetails') { %>
+            <input class="form-button-submit" type="submit" value="<%=btnLabel%>" />
+            <p id="errorsSummary" class="errors-text"></p>
+            <a class="form-button-cancel" href="/comic-author"><%= __('form.actions.cancel') %></a>
+             <% } else { %>
+             <a class="form-button-cancel" href="/comic-author"><%= __('form.actions.return') %></a>
+            <% } %>
+            </div>
+
+
+        </form>
+    </main>
+<%- include('../../fragments/footer.ejs') %>

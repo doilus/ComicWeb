@@ -1,0 +1,54 @@
+﻿<%- include('../../fragments/header.ejs') %>
+    <main>
+        <h2><%= __('comics.list.header') %></h2>
+        <table class="table-list">
+            <thead>
+                <tr>
+                    <th><%= __('comics.list.title') %></th>
+                    <th class="dateFirstEdition"><%= __('comics.list.publishDate') %></th>
+                    <th class="numberPages"><%= __('comics.list.numberPage') %></th>
+                    <th class="publishingHouse"><%= __('comics.list.publish') %></th>
+                    <th><%= __('list.actions.title') %></th>
+                </tr>
+            </thead>
+            <tbody>
+               <% for (let comics of com) { %>
+    <tr>
+        <td><%= comics.title %></td>
+        <td class="dateFirstEdition"><%= comics.releaseDate %></td>
+        <td  class="numberPages"><%= comics.pages %></td>
+        <td class="publishingHouse"><%= comics.publishingHouse %></td>
+        <td>
+            <ul class="list-actions">
+                            <li>
+                                <a href="/comics/details/<%=comics._id%>" class="list-actions-button-details" href=""><%= __('list.actions.details') %></a>
+                            </li>
+                            <% if(loggedUser) { %>
+
+                            <li>
+                                <a href="/comics/edit/<%=comics._id%>" class="list-actions-button-edit" href=""><%= __('list.actions.edit') %></a>
+                            </li>
+                            <li>
+                                
+                                <a href="/comics/delete/<%=comics._id%>" class="list-actions-button-delete" href=""><%= __('list.actions.delete') %></a>
+                            </li>
+                            <% } %>
+                            <a href="/comics/details/<%=comics._id%>"  href=""><image class ="svgButtonDetails" src="/images/search.svg" alt="szczegoly"></a>
+                                <% if(loggedUser) { %>
+
+                             <a href="/comics/edit/<%=comics._id%>"  href=""><image class ="svgButtonEdit" src="/images/edit.svg" alt="szczegoly"></a>
+                             <a  href="/comics/delete/<%=comics._id%>"  href=""><image class ="svgButtonDelete" src="/images/delete.svg" alt="szczegoly"></a>
+                                <% } %>
+                        </ul>
+        </td>
+    </tr>
+<% } %>
+
+                <!--Tu wstaw dodatkowe wiersze-->
+            </tbody>
+        </table>
+        
+        <p><a href="/comics/add" class="button-add"><%= __('comics.list.add') %></a></p>
+        
+    </main>
+<%- include('../../fragments/footer.ejs') %>

@@ -1,0 +1,76 @@
+﻿<%- include('../../fragments/header.ejs') %>
+    <main>
+        <h2>Dodatkowe informacje</h2>
+        <form class="form">
+            
+                <label for="name">Imie:</label>
+                <input type="text" name="name" value="Brian" id="name" disabled />
+            
+                <label for="surname">Rok pierwszego wydania:</label>
+                <input type="text" name="surname" value="K.Vaughan" id="surname" disabled />
+           
+                <label for="pageNumber">Liczba stron:</label>
+                <input type="number" name="pageNumber" value="264" id="pageNumber" disabled />
+            
+                <label for="birthDate">Data urodzenia: </label>
+                <input type="date" name="birthDate" value='17-07-1976' id="birthDate" disabled />
+            
+                <label for="deathDate">Data śmierci: </label>
+                <input type="date" name="deathDate" value="-" id="deathDate" disabled />
+            
+                <label for="country">Kraj:</label>
+                <input type="text" name="country" value="USA" id="country" disabled />
+                
+                <a href="" class="form-button">Edytuj</a> 
+
+</form>
+        <h2> Szczegóły autora </h2>
+        <table class="table-list">
+            <thead>
+                <tr>
+                    <th>Tytuł</th>
+                    <th>Data pierwszego wydania</th>
+                    <th>Liczba stron</th>
+                    <th>Wydawnictwo</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Y-Ostatni z mężczyzn tom I</td>
+                    <td>2008</td>
+                    <td>264</td>
+                    <td>Egmont</td>
+                </tr>
+                <tr>
+                    <td>Y-Ostatni z mężczyzn tom II</td>
+                    <td>2009</td>
+                    <td>312</td>
+                    <td>Egmont</td>
+                </tr>
+                <tr>
+                    <td>Y-Ostatni z mężczyzn tom III</td>
+                    <td>2010</td>
+                    <td>312</td>
+                    <td>Egmont</td>
+                </tr>
+                <tr>
+                    <td>Y-Ostatni z mężczyzn tom IV</td>
+                    <td>2010</td>
+                    <td>288</td>
+                    <td>Egmont</td>
+                </tr>
+                <tr>
+                    <td>Ostatni z mężczyzn tom V</td>
+                    <td>2011</td>
+                    <td>312</td>
+                    <td>Egmont</td>
+                </tr>
+
+            </tbody>
+        </table>
+        <p><a href="" class="button-add">Powrót</a></p>
+
+
+
+    </main>
+<%- include('../../fragments/footer.ejs') %>

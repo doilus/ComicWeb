@@ -1,0 +1,135 @@
+{
+	"login": {
+		"surname": "Surname",
+		"password": "Password",
+		"loginInfo": "You're signed as",
+		"logout": "logout",
+		"loginin": "login"
+	},
+	"main-page": {
+		"content": "Main page",
+		"header": "Comic books' infomation",
+		"quote": "Comic books to me are fairy tales for grown-ups - Stan Lee"
+	},
+	"nav": {
+		"main-page": "Main page",
+		"authors": "Authors",
+		"comics": "Comics",
+		"author-comics": "Authorship"
+	},
+	"list": {
+		"actions": {
+			"title": "Options",
+			"details": "Details",
+			"edit": "Edit",
+			"delete": "Delete"
+		},
+		"title": "list.title"
+	},
+	"form": {
+		"actions": {
+			"return": "Back",
+			"edit": "Edit",
+			"cancel": "Cancel"
+		}
+	},
+	"aut": {
+		"fields": {
+			"firstName": "Name",
+			"surname": "Surname",
+			"birthDate": "Birth date",
+			"deathDate": "Death date",
+			"country": "Country",
+			"details": "Authors' details",
+			"password": "Password"
+		},
+		"list": {
+			"title": "Authors' list",
+			"addNew": "Add new author",
+			"noData": "No authors in the database",
+			"pageTitle": "List of authors"
+		},
+		"form": {
+			"comic-author": "Details authorship",
+			"add": {
+				"pageTitle": "Add author",
+				"btnLabel": "Add author",
+				"confirm": {
+					"header": "Operation confirmed",
+					"text": "Successfully added"
+				}
+			},
+			"edit": {
+				"pageTitle": "Edit author",
+				"btnLabel": "Save changes",
+				"confirm": {
+					"header": "Operation confirmed",
+					"text": "Author successfully added"
+				},
+				"add": {
+					"pageTitle": "Add author"
+				}
+			}
+		}
+	},
+	"comic-author": {
+		"fields": {
+			"comics": "Comic",
+			"author": "Author",
+			"role": "Role",
+			"country": "Country",
+			"percent": "Percent"
+		},
+		"list": {
+			"btnlbl": "Add new authorship",
+			"title": "List of authorships"
+		},
+		"form": {
+			"chosecom": "Choose comic",
+			"choseaut": "Choose author",
+			"title": "New authorship",
+			"btn": "Add authorship",
+			"titleEdit": "Edit authorship",
+			"btnEdit": "Edit authorship",
+			"details": "Authorship's details"
+		}
+	},
+	"comics": {
+		"list": {
+			"header": "Comics' list",
+			"title": "Title",
+			"publishDate": "Publish date",
+			"numberPage": "Number of pages",
+			"publish": "Publishing house",
+			"add": "Add new comic"
+		},
+		"form": {
+			"title": "New comic",
+			"btn": "Add comic",
+			"titleEdit": "Edit comic",
+			"btnEdit": "Edit comic",
+			"details": "Comic's details"
+		}
+	},
+	"validationMessage": {
+		"fieldRequired": "The field is required",
+		"signs": "This field should contain 2 to 90 characters",
+		"signs6": "This field should contain 2 to 60 characters",
+		"date": "Can't be future date",
+		"dateLow": "Date of birth should be earlier than date of death",
+		"summary": "The form contains errors",
+		"intcheck": "field should be a number",
+		"pages": "pages have to be greater than 0",
+		"intBig": "field should be greater than 0",
+		"intcheckBig": "field should be greater than 0 and less than 100",
+   	 	"comic": "Should pick comic",
+		"author": "Should pic author",
+		"loginErr": "Wrong surname or password"
+	},
+	"placeholder": {
+		"string": "2-90 characters",
+		"string6": "2-60 characters",
+		"int": "bigger than 0"
+		
+	}
+}

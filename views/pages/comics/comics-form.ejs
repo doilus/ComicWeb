@@ -1,0 +1,97 @@
+﻿<%- include('../../fragments/header.ejs') %>
+<script type="application/javascript" src="/js/validationCommon.js"></script>
+ <script type="application/javascript" src="/js/validationComicsform.js"></script>
+    <main>
+    <h2><%= pageTitle %></h2>
+        <form class="form" method="post" action="<%=formAction%>" novalidate onsubmit="return validateForm()"  >
+
+            <input type="hidden" name="_id" value="<%= com._id %>">
+
+            <label for="title"><%= __('comics.list.title') %><abbr title="required" aria-label="required">*</abbr></label>
+            <input type="text" name="title" id="title" placeholder="<%= __('placeholder.string') %>" class="<%= validationErrors.find(e => e.path.includes('title')) ? 'error-input' : '' %>" value="<%= com.title %>" <%= (formMode == 'showDetails') ? 'disabled' : '' %>/>
+            <span id="errorTitle" class="errors-text" >
+                <% if (validationErrors.find(e => e.path.includes('title'))) { %>
+                    <!-- %= validationErrors.find(e => e.path.includes('title')).message %> -->
+                    <%= __('validationMessage.fieldRequired') %>
+                 <% } %>
+            </span> <!-- wyświetlenie błędu-->
+
+            <label for="releaseDate"><%= __('comics.list.publishDate') %><abbr title="required" aria-label="required">*</abbr></label>
+            <input type="number" name="releaseDate" id="releaseDate" placeholder="<%= __('placeholder.int') %>" class="<%= validationErrors.find(e => e.path.includes('releaseDate')) ? 'error-input' : '' %>" value="<%= com.releaseDate %>" <%= (formMode == 'showDetails') ? 'disabled' : '' %>/>
+            <span id="errorYearPublish" class="errors-text">
+                <% if (validationErrors.find(e => e.path.includes('releaseDate'))) { %>
+                    <%= __('validationMessage.fieldRequired') %>
+                 <% } %>
+            </span>
+
+            <label for="pages"><%= __('comics.list.numberPage') %><abbr title="required" aria-label="required">*</abbr></label>
+            <input type="number" name="pages" id="pages" placeholder="<%= __('placeholder.int') %>" class="<%= validationErrors.find(e => e.path.includes('pages')) ? 'error-input' : '' %>" value="<%= com.pages %>"  <%= (formMode == 'showDetails') ? 'disabled' : '' %>/>
+            <span id="errorPageNumber" class="errors-text">
+                <% if (validationErrors.find(e => e.path.includes('pages'))) { %>
+                    <%= __('validationMessage.fieldRequired') %>
+                 <% } %>
+            </span>
+
+            <label for="publishingHouse"><%= __('comics.list.publish') %><abbr title="required" aria-label="required">*</abbr></label>
+            <input type="text" name="publishingHouse" id="publishingHouse" placeholder="<%= __('placeholder.string6') %>" class="<%= validationErrors.find(e => e.path.includes('publishingHouse')) ? 'error-input' : '' %>" value="<%= com.publishingHouse %>"  <%= (formMode == 'showDetails') ? 'disabled' : '' %>/>
+            <span id="errorPublishingHouse" class="errors-text">
+                <% if (validationErrors.find(e => e.path.includes('publishingHouse'))) { %>
+                    <%= __('validationMessage.fieldRequired') %>
+                 <% } %>
+            </span>
+
+            <div style="display: none">
+                <span id="errorMessage-required"><%= __('validationMessage.fieldRequired') %></span>
+                <span id="errorMessage-signs"><%= __('validationMessage.signs') %></span>
+                <span id="errorMessage-summary"><%= __('validationMessage.summary') %></span>
+                <span id="errorMessage-intcheck"><%= __('validationMessage.intcheck') %></span>
+                <span id="errorMessage-pages"><%= __('validationMessage.pages') %></span>
+                <span id="errorMessage-intBig"><%= __('validationMessage.intBig') %></span>
+            </div>
+
+            <% if (formMode == 'showDetails') { %>
+                <% if(loggedUser) { %>
+                <div class="form-buttons">
+                 <a href="/comics/edit/<%= com._id %>" class="form-button-submit" ><%= __('list.actions.edit') %></a> 
+                </div>
+                <% } %>
+            <% } %>
+
+            <div class="form-buttons">
+             <% if (formMode != 'showDetails') { %>
+            <input class="form-button-submit" type="submit" value="<%=btnLabel%>" />
+            <p id="errorsSummary" class="errors-text"></p>
+            <a class="form-button-cancel" href="/comics"><%= __('form.actions.cancel') %></a>
+             <% } else { %>
+             <a class="form-button-cancel" href="/comics"><%= __('form.actions.return') %></a>
+            <% } %>
+            </div>
+            
+        </form>
+         <% if (formMode == 'showDetails' || formMode == 'edit') { %>
+            <h2> <%= __('aut.form.comic-author') %></h2>
+            <table class="table-list">
+                <thead>
+                 <tr>
+            <th><%= __('comic-author.fields.author') %></th>
+            <th><%= __('comic-author.fields.role') %></th>
+            <th><%= __('comic-author.fields.country') %></th>
+            <th><%= __('comic-author.fields.percent') %></th>
+            </tr>
+            </thead>
+            <tbody>
+            <% for (let c of com.authorcomics) { %>
+                <tr>
+                    <td><a class="lin" style="text-decoration: none" href="/authors/details/<%= c.author._id %>"><%= c.author.firstName %></a></td>
+                    <td><%= c.role %></td>
+                    <td><%= c.country %></td>
+                    <td><%= c.percent %></td>
+                </tr>
+            <% } %>
+            </tbody>
+            </table>
+            <% } %>
+
+
+    </main>
+<%- include('../../fragments/footer.ejs') %>

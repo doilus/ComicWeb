@@ -1,0 +1,56 @@
+﻿<%- include('../../fragments/header.ejs') %>
+
+    <main>
+        <h2><%= __('comic-author.list.title') %></h2>
+        <table class="table-list">
+            <thead>
+                <tr>
+                   
+                   <th><%= __('comic-author.fields.comics') %></th>
+                   <th><%= __('comic-author.fields.author') %></th>
+                    <th class="role"><%= __('comic-author.fields.role') %></th>
+                    <th class="country"><%= __('comic-author.fields.country') %></th>
+                    <th class="percent"><%= __('comic-author.fields.percent') %></th>
+                    <th><%= __('list.actions.title') %></th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <% for (let comicauthors of autcom) { %>
+                <tr>
+                    <td><a class = "lin" style="text-decoration: none" href="/comics/details/<%= comicauthors.comics._id %>"><%= comicauthors.comics.title %> </a></td>
+                    <td><a class = "lin" style="text-decoration: none" href="/authors/details/<%= comicauthors.author._id %>"><%= comicauthors.author.firstName %></a></td>
+                    <td class="role"><%= comicauthors.role %></td>
+                    <td class="country"><%= comicauthors.country %></td>
+                    <td class="percent"> <%= comicauthors.percent %></td>
+                     <td>
+           <ul class="list-actions">
+                            <li>
+                                <a href="/comic-author/details/<%=comicauthors._id%>" class="list-actions-button-details" href=""><%= __('list.actions.details') %></a>
+                            </li>
+                            <% if(loggedUser) { %>
+                            <li>
+                                <a href="/comic-author/edit/<%=comicauthors._id%>" class="list-actions-button-edit" href=""><%= __('list.actions.edit') %></a>
+                            </li>
+                            <li>
+                                <a href="/comic-author/delete/<%=comicauthors._id%>" class="list-actions-button-delete" href=""><%= __('list.actions.delete') %></a>
+                            </li>
+                            <% } %>
+
+                            <a href="/comic-author/details/<%=comicauthors._id%>"  href=""><image class ="svgButtonDetails" src="/images/search.svg" alt="szczegoly"></a>
+                                <% if(loggedUser) { %>
+                                <a href="/comic-author/edit/<%=comicauthors._id%>"  href=""><image class ="svgButtonEdit" src="/images/edit.svg" alt="szczegoly"></a>
+                             <a  href="/comic-author/delete/<%=comicauthors._id%>"  href=""><image class ="svgButtonDelete" src="/images/delete.svg" alt="szczegoly"></a>
+                                <% } %>
+                            </ul>
+        </td>
+                </tr>
+            <% } %>
+            </tbody>
+        </table>
+       
+
+        <p><a href="comic-author/add" class="button-add"><%= __('comic-author.list.btnlbl') %></a></p>
+        
+    </main>
+<%- include('../../fragments/footer.ejs') %>

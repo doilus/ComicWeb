@@ -1,0 +1,70 @@
+﻿<%- include('../../fragments/header.ejs') %>
+
+    <main>
+        <h2>Dodatkowe informacje</h2>
+        <form class="form">
+            
+                <label for="title">Tytuł:</label>
+                <input type="text" name="title" value="Y-Ostatni z mężczyzn tom I" id="title" disabled />
+            
+                <label for="yearPublish">Rok pierwszego wydania:</label>
+                <input type="number" name="yearPublish" value="2008" id="yearPublish" disabled />
+            
+                <label for="pageNumber">Liczba stron:</label>
+                <input type="number" name="pageNumber" value="264" id="pageNumber" disabled />
+           
+                <label for="publishingHouse">Wydawnictwo:</label>
+                <input type="text" name="publishingHouse" value="Egmont" id="publishingHouse" disabled />
+           
+                <a href="" class="form-button">Edytuj</a>
+        </form>
+        <h2> Szczegóły komiksu </h2>
+        <table class="table-list">
+            <thead>
+                <tr>
+                    <th>Autor</th>
+                    <th>Rola</th>
+                    <th>Kraj</th>
+                    <th>Procent</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Brian K. Vaughan</td>
+                    <td>Scenarzysta</td>
+                    <td>-</td>
+                    <td>40</td>
+                </tr>
+                <tr>
+                    <td>Pia Guerra</td>
+                    <td>Ilustrator</td>
+                    <td>-</td>
+                    <td>40</td>
+                </tr>
+                <tr>
+                    <td>Marzan Jr. Jose</td>
+                    <td>Tusz</td>
+                    <td>-</td>
+                    <td>10</td>
+                </tr>
+                <tr>
+                    <td>Pamela Rambo</td>
+                    <td>Kolory</td>
+                    <td>-</td>
+                    <td>5</td>
+                </tr>
+                <tr>
+                    <td>J.G. Jones</td>
+                    <td>Orginalne okładki zeszytów serii</td>
+                    <td>-</td>
+                    <td>5</td>
+                </tr>
+
+            </tbody>
+        </table>
+        <p><a href="" class="button-add">Powrót</a></p>
+
+
+
+    </main>
+<%- include('../../fragments/footer.ejs') %>

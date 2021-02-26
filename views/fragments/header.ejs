@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html lang="pl-PL">
+<head>
+    <link rel="stylesheet" href="/css/style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comic books </title>
+
+    <script src="../../app.js"></script>
+    
+   
+  
+</head>
+<body>
+<% if(!loggedUser) { %>
+    <div class="login" id="login">
+        
+        <form  method="post" action="/login" novalidate>
+            <label for="surname"><%= __('login.surname') %></label>
+            <input type="surname" id="loginSurname" name="surname">
+
+            <label for="loginPassword"><%= __('login.password') %></label>
+            <input type="password" id="loginPassword" name="password">
+
+            <input type="submit" class="buttonLogin" value=<%= __('login.loginin') %>>
+            <span id="loginErrors"><%= loginError ? loginError : ''%></span>
+        </form>
+    </div>
+<% } else { %>
+    <span class="login"><%= __('login.loginInfo') %> <%=loggedUser.firstName + " " + loggedUser.surname%></span>
+    <a style="text-decoration: none" class="buttonLogin"href="/logout"><%= __('login.logout') %></a>
+<% } %>
+    <header>
+     
+        <h1> <%= __('main-page.header') %></h1>
+        <img src="/images/comic1.png" alt="Harleen" width="300" />
+    </header>
+    <nav>
+        <ul>
+            <li><a href="/" class="<%= navLocation == 'main' ? 'active' : ''%>"><%= __('nav.main-page') %></a></li>
+           
+            <li><a href="/authors" class="<%= navLocation == 'authors' ? 'active' : ''%>"><%= __('nav.authors') %></a></li>
+            
+            <li><a href="/comics" class="<%= navLocation == 'comics' ? 'active' : ''%>"><%= __('nav.comics') %></a></li>
+            <li><a href="/comic-author" class="<%= navLocation == 'comic-author' ? 'active' : ''%>" ><%= __('nav.author-comics') %></a></li>
+            <li><a href="/changeLang/pl" class="<%= lang == 'pl' ? 'active' : ''%>">PL</a></li>
+            <li><a href="/changeLang/en" class="<%= lang == 'en' ? 'active' : ''%>">EN</a></li>
+        </ul>
+       
+    </nav>

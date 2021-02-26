@@ -1,0 +1,31 @@
+{
+	"login": {
+		"password": "login.password",
+		"loginin": "login.loginin"
+	},
+	"main-page": {
+		"header": "main-page.header"
+	},
+	"nav": {
+		"main-page": "nav.main-page",
+		"authors": "nav.authors",
+		"comics": "nav.comics",
+		"author-comics": "nav.author-comics"
+	},
+	"comics": {
+		"list": {
+			"header": "comics.list.header",
+			"title": "comics.list.title",
+			"publishDate": "comics.list.publishDate",
+			"numberPage": "comics.list.numberPage",
+			"publish": "comics.list.publish",
+			"add": "comics.list.add"
+		}
+	},
+	"list": {
+		"actions": {
+			"title": "list.actions.title",
+			"details": "list.actions.details"
+		}
+	}
+}

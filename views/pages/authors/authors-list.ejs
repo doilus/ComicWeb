@@ -1,0 +1,57 @@
+﻿<%- include('../../fragments/header.ejs') %>
+    <main>
+        <h2><%= __('aut.list.title') %></h2>
+        <table class="table-list">
+            <thead>
+                <tr>
+                    <th><%= __('aut.fields.firstName') %></th> 
+                    <th><%= __('aut.fields.surname') %></th>
+                    <th class="dateShow"><%= __('aut.fields.birthDate') %></th>
+                    <th class="dateShow"><%= __('aut.fields.deathDate') %></th>
+                    <th class="countryShow"><%= __('aut.fields.country') %></th>
+                    <th><%= __('list.actions.title') %></th>
+                </tr>
+            </thead>
+            <tbody>
+                <% for (let author of aut) { %>
+    <tr>
+        <td><%= author.firstName %></td>
+        <td><%= author.surname %></td>
+        <td class="dateShow"><%= author.birthDate.toISOString().split('T')[0] %></td>
+        <td class="dateShow"><%= (author.deathDate == null) ? author.deathDate : author.deathDate.toISOString().split('T')[0]  %></td>
+        <td class="countryShow"><%= author.country %></td>
+        <td>
+            <ul class="list-actions">
+                            <li>
+                                <a href="/authors/details/<%=author._id%>" class="list-actions-button-details" href=""><%= __('list.actions.details') %></a>
+                                
+                              
+                            </li>
+                            <% if(loggedUser) { %>
+                            <li>
+                                <a href="/authors/edit/<%=author._id%>" class="list-actions-button-edit" href=""><%= __('list.actions.edit') %></a>
+                                
+                            </li>
+                            <li>
+                                <a href="/authors/delete/<%=author._id%>" class="list-actions-button-delete" href=""><%= __('list.actions.delete') %></a>
+                                
+                            </li>
+                            <% } %>
+
+                             <a href="/authors/details/<%=author._id%>"  href=""><image class ="svgButtonDetails" src="/images/search.svg" alt="szczegoly"></a>
+                                <% if(loggedUser) { %>
+                             <a href="/authors/edit/<%=author._id%>"  href=""><image class ="svgButtonEdit" src="/images/edit.svg" alt="szczegoly"></a>
+                             <a href="/authors/delete/<%=author._id%>"  href=""><image class ="svgButtonDelete" src="/images/delete.svg" alt="szczegoly"></a>
+                                <% } %>
+                        </ul>
+        </td>
+    </tr>
+<% } %>
+
+            </tbody>
+        </table>
+        
+        <p><a href="/authors/add" class="button-add"><%= __('aut.list.addNew') %></a></p>
+        
+    </main>
+<%- include('../../fragments/footer.ejs') %>

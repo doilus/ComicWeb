@@ -1,0 +1,135 @@
+{
+	"login": {
+		"surname": "Nazwisko",
+		"password": "Hasło",
+		"loginInfo": "Jestes zalogowany jako",
+		"logout": "wyloguj",
+		"loginin": "zaloguj"
+	},
+	"main-page": {
+		"content": "Strona główna",
+		"header": "Informacje o komiksach",
+		"quote": "Im więcej czytasz, tym lepszym gawędziarzem się staniesz. -Stan Lee"
+	},
+	"nav": {
+		"main-page": "Strona główna",
+		"authors": "Autorzy",
+		"comics": "Komiksy",
+		"author-comics": "Wykonanie"
+	},
+	"list": {
+		"actions": {
+			"title": "Opcje",
+			"details": "Szczegły",
+			"edit": "Edytuj",
+			"delete": "Usuń"
+		}
+	},
+	"form": {
+		"actions": {
+			"return": "Powrót",
+			"edit": "Edytuj",
+			"cancel": "Anuluj"
+		},
+		"comic-authors": "form.comic-authors"
+	},
+	"aut": {
+		"fields": {
+			"firstName": "Imię",
+			"surname": "Nazwisko",
+			"birthDate": "Data urodzenia",
+			"deathDate": "Data śmierci",
+			"country": "Kraj",
+			"details": "Szczegóły autora",
+			"password": "Hasło"
+		},
+		"list": {
+			"title": "Lista autorów",
+			"addNew": "Dodaj nowego autora",
+			"noData": "Brak autorów w bazie",
+			"pageTitle": "Lista autorów"
+		},
+		"form": {
+			"comic-author": "Szczegóły wykonania",
+			"add": {
+				"pageTitle": "Dodanie autora",
+				"btnLabel": "Dodaj autora",
+				"confirm": {
+					"header": "Potwierdzenie operacji",
+					"text": "Pomyślnie dodano autora"
+				}
+			},
+			"edit": {
+				"pageTitle": "Edycja autora",
+				"btnLabel": "Zapisz zmiany",
+				"confirm": {
+					"header": "Potwierdzenie operacji",
+					"text": "Pomyślnie zaktualizowano autora"
+				},
+				"add": {
+					"pageTitle": "Dodaj autora"
+				}
+			}
+		}
+	},
+	"comic-author": {
+		"fields": {
+			"comics": "Komiks",
+			"author": "Autor",
+			"role": "Rola",
+			"country": "Kraj",
+			"percent": "Procent"
+		},
+		"list": {
+			"btnlbl": "Dodaj nowe wykonanie",
+			"title": "Lista wykonania"
+		},
+		"form": {
+			"chosecom": "Wybierz komiks",
+			"choseaut": "Wybierz autora",
+			"title": "Nowe wykonanie",
+			"btn": "Dodaj wykonanie",
+			"titleEdit": "Edycja wykonania",
+			"btnEdit": "Edytuj wykonanie",
+			"details": "Szczegóły wykonania"
+		}
+	},
+	"comics": {
+		"list": {
+			"header": "Lista komiksów",
+			"title": "Tytuł",
+			"publishDate": "Data pierwszego wydania",
+			"numberPage": "Liczba stron",
+			"publish": "Wydawnictwo",
+			"add": "Dodaj nowy komiks"
+		},
+		"form": {
+			"title": "Nowy komiks",
+			"btn": "Dodaj komiks",
+			"titleEdit": "Edycja komiksu",
+			"btnEdit": "Edytuj komiks",
+			"details": "Szczegóły komiksu"
+		}
+	},
+	"validationMessage": {
+    "fieldRequired": "Pole jest wymagane",
+    "signs": "Pole powinno zawierać od 2 do 90 znaków",
+    "signs6": "Pole powinno zawierać od 2 do 60 znaków",
+    "date": "Data nie może być z przyszłości",
+    "dateLow": "Data urodzenia do powinna być wczesniejsza niż data śmierci",
+    "summary": "Formularz zawiera błędy",
+    "intcheck": "pole powinno byc liczbą",
+    "pages": "Liczba stron musi byc wieksza niz 0",
+    "intBig": "Pole powinno byc wieksze niz 0",
+    "intcheckBig": "Pole powinno byc wartością od 0 do 100",
+    "comic": "Należy wybrać komis",
+	"author": "Należy wybrać autora",
+	"loginErr": "Nieprawidłowe nazwisko lub hasło"
+  },
+  "placeholder":{
+    "string": "2-90 znaków",
+    "string6": "2-60 znaków",
+    "int": "większa niż 0"
+   
+  }
+}

@@ -1,0 +1,36 @@
+﻿<%- include('../../fragments/header.ejs') %>
+    <main>
+        <h2>Dotatkowe informacje</h2>
+        <form class="form">
+
+            <label for="comics">Komiks:<abbr title="required" aria-label="required">*</abbr></label>
+            <select name="comics" id="comics">
+                <option value="ostatni">Y-Ostatni z mężczyzn tom I</option>
+                <option value="ostatni2">Y-Ostatni z mężczyzn tom II</option>
+                <option value="ostatni3">Y-Ostatni z mężczyzn tom III</option>
+            </select>
+
+            <label for="author">Autor:<abbr title="required" aria-label="required">*</abbr></label>
+            <select name="author" id="author">
+                <option value="brian">Brian K.Vaughan</option>
+                <option value="pia">Pia Guerra</option>
+                <option value="marzan">Marzan Jr.Jose</option>
+            </select>
+
+
+            <label for="role">Rola:</label>
+            <input type="text" name="role" value="Scenarzysta" id="role" disabled/>
+
+            <label for="country">Kraj:</label>
+            <input type="text" name="country" value="-" id="country" disabled/>
+
+            <label for="percent">Procent:</label>
+            <input type="number" name="percent" value="40" id="percent" disabled/>
+
+   
+            <a href="" class="form-button">Edytuj</a>
+            <p><a href="" class="button-add">Powrót</a></p>
+
+        </form>
+    </main>
+<%- include('../../fragments/footer.ejs') %>
