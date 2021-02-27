@@ -52,11 +52,22 @@ $ npm i i18n
 ```
 
 ## Preview
-Full:
+### Full:
 <p align="center">
 <img src="img-preview/1.jpg" width="700">
 </p>
-Media looks:
+
+### Change languages:
+<p align="center">
+<img src="img-preview/changeLanguage.gif" height="400">
+</p>
+
+### Validation:
+<p align="center">
+<img src="img-preview/validation.gif" height="400">
+</p>
+
+### Media looks:
 <p align="center">
 <img src="img-preview/2.jpg" height="500">
 <img src="img-preview/3.jpg" height="500">
