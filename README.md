@@ -6,6 +6,7 @@ Created with Node.js, EJS templates, framework Express and framework ORM - seque
 * [General info](#general-info)
 * [Technologies](#technologies)
 * [Setup](#setup)
+* [Preview](#preview)
 
 ## General info
 This is a website that shows informations about comics and: 
@@ -49,3 +50,15 @@ $ npm i express-session
 $ npm i bcryptjs
 $ npm i i18n
 ```
+
+## Preview
+Full:
+<p align="center">
+<img src="img-preview/1.jpg" width="700">
+</p>
+Media looks:
+<p align="center">
+<img src="img-preview/2.jpg" height="500">
+<img src="img-preview/3.jpg" height="500">
+<p>
+
